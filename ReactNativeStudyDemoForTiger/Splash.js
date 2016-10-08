@@ -15,7 +15,6 @@ export default class Splash extends Component {
     this.state = {};
     var { navigator } = this.props;
     setTimeout(() => {
-      console.log('===================yayaya');
       navigator.replace({
         name: 'MainPage',
         component: MainPage,
