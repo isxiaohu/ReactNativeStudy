@@ -8,10 +8,10 @@ export default class Home extends Component{
 		this.state = {text:"hahaha"}
 	}
 
-	change(){
-		console.log('我没妹');
+	change(region){
+		console.log('你妹啊' + region);
 	}
-	
+
 	render(){
 		var region = {
 		 latitude: 31.41,

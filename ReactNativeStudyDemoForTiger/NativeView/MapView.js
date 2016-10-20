@@ -13,7 +13,6 @@ export default class MapView extends Component {
       console.log('你妹啊');
       return;
     }
-    console.log(event.nativeEvent.region.latitude);
     this.props.onRegionChange(event.nativeEvent.region.latitude);
   }
   static propTypes = {

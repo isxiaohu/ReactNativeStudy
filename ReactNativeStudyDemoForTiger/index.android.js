@@ -5,6 +5,7 @@
  */
 
 import React, { Component } from 'react';
+import ToastTigerAndroid from './NativeView/android/ToastTigerAndroid';
 import {
   AppRegistry,
   StyleSheet,
@@ -13,6 +14,16 @@ import {
 } from 'react-native';
 
 class ReactNativeStudyDemoForTiger extends Component {
+  constructor(props){
+    super(props);
+    ToastTigerAndroid.show('农家小炒肉',ToastTigerAndroid.SHORT);
+    ToastTigerAndroid.measureLayout(100,100,(msg) => {
+      console.log(msg);
+      ToastTigerAndroid.show(msg,ToastTigerAndroid.SHORT);
+    },(x, y, width, height) => {
+      ToastTigerAndroid.show(x + ':' + y + ':' + width + ':' + height,ToastTigerAndroid.SHORT);
+    });
+  }
   render() {
     return (
       <View style={styles.container}>
