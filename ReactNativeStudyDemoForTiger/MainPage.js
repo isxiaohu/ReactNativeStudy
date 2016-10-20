@@ -20,19 +20,19 @@ export default class MainPage extends Component {
     this.state = {
       selectedTab: HOME_TAB,
     };
-	}	
+	}
 
   _renderContent(pageName: string, num?: number){
     var renderView;
     if(pageName == HOME_TAB){
       renderView = <Home/>
-    } 
+    }
     return (
       <View style={styles.pageView}>
         {renderView}
       </View>
-    );   
-  } 
+    );
+  }
 
   render(){
 		return(
@@ -45,19 +45,18 @@ export default class MainPage extends Component {
             icon={require('./images/icon_home_nor.png')}
             selected={this.state.selectedTab === HOME_TAB}>
             {this._renderContent(HOME_TAB)}
-          </TabBarIOS.Item>  
+          </TabBarIOS.Item>
           <TabBarIOS.Item
             title = "首页"
             icon={require('./images/icon_home_nor.png')}
             selected={this.state.selectedTab === HOME_TAB}>
             {this._renderContent(HOME_TAB)}
-          </TabBarIOS.Item> 
+          </TabBarIOS.Item>
         </TabBarIOS>
 			</View>
 		);
 	}
 }
-
 
 const styles = StyleSheet.create({
 	container: {
