@@ -31,11 +31,6 @@ public class ToastModule extends ReactContextBaseJavaModule{
     @ReactMethod
     public void measureLayout(int tag, int ancestorTag, Callback errorCallback, Callback successCallback) {
         try {
-//            measureLayout(tag, ancestorTag, errorCallback,successCallback);
-//            float relativeX = PixelUtil.toDIPFromPixel(20);
-//            float relativeY = PixelUtil.toDIPFromPixel(30);
-//            float width = PixelUtil.toDIPFromPixel(40);
-//            float height = PixelUtil.toDIPFromPixel(50);
             successCallback.invoke(20, 30, 90, 20);
         } catch (IllegalViewOperationException e) {
             errorCallback.invoke(e.getMessage());

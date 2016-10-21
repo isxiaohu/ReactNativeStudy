@@ -3,9 +3,9 @@
  * https://github.com/facebook/react-native
  * @flow
  */
-
 import React, { Component } from 'react';
 import ToastTigerAndroid from './NativeView/android/ToastTigerAndroid';
+import TigerCoustomView from './NativeView/android/TigerCustomView'
 import {
   AppRegistry,
   StyleSheet,
@@ -24,25 +24,28 @@ class ReactNativeStudyDemoForTiger extends Component {
       ToastTigerAndroid.show(x + ':' + y + ':' + width + ':' + height,ToastTigerAndroid.SHORT);
     });
   }
+  
+  onClick(){
+    ToastTigerAndroid.show('点你妹啊',ToastTigerAndroid.SHORT);
+  }
+
   render() {
     return (
       <View style={styles.container}>
         <Text style={styles.welcome}>
           Welcome to React Native!
         </Text>
-        <Text style={styles.instructions}>
-          To get started, edit index.android.js
-        </Text>
-        <Text style={styles.instructions}>
-          Double tap R on your keyboard to reload,{'\n'}
-          Shake or press menu button for dev menu
-        </Text>
+        <TigerCoustomView onChangeMessage = {this.onClick} bg = {'258217'} style = {styles.custom}/>
       </View>
     );
   }
 }
 
 const styles = StyleSheet.create({
+  custom: {
+    width: 300,
+    height: 200,
+  },
   container: {
     flex: 1,
     justifyContent: 'center',

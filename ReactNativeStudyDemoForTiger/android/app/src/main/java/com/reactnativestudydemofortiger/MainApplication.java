@@ -27,9 +27,10 @@ public class MainApplication extends Application implements ReactApplication {
               new AnExampleReactPackage());
     }
   };
-
   @Override
   public ReactNativeHost getReactNativeHost() {
       return mReactNativeHost;
   }
+
+
 }

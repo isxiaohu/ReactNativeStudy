@@ -28,7 +28,7 @@ class ReactNativeStudyDemoForTiger extends Component {
         let Component = route.component;
         return <Component {...route.params} navigator={navigator} />
       }}
-      />  
+      />
     );
   }
 }
