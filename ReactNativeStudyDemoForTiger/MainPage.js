@@ -11,8 +11,12 @@ import {
 } from 'react-native';
 
 import Home from './views/home/Home';
+import Discover from './views/discover/Discover';
+import Setting from './views/setting/Setting';
 
 const HOME_TAB = 'home_tab';
+const DISCOVER_TAB = 'discover-tab';
+const SETTING_TAB = 'setting_tab';
 
 export default class MainPage extends Component {
 	constructor(props){
@@ -26,6 +30,10 @@ export default class MainPage extends Component {
     var renderView;
     if(pageName == HOME_TAB){
       renderView = <Home/>
+    }else if(pageName == DISCOVER_TAB){
+      renderView = <Discover/>
+    }else if(pageName == SETTING_TAB){
+      renderView = <Setting/>
     }
     return (
       <View style={styles.pageView}>
@@ -43,14 +51,29 @@ export default class MainPage extends Component {
           <TabBarIOS.Item
             title = "首页"
             icon={require('./images/icon_home_nor.png')}
-            selected={this.state.selectedTab === HOME_TAB}>
+            selected={this.state.selectedTab === HOME_TAB}
+            onPress={()=>
+              this.setState({ selectedTab: HOME_TAB})
+            }>
             {this._renderContent(HOME_TAB)}
           </TabBarIOS.Item>
           <TabBarIOS.Item
-            title = "首页"
-            icon={require('./images/icon_home_nor.png')}
-            selected={this.state.selectedTab === HOME_TAB}>
-            {this._renderContent(HOME_TAB)}
+            title = "发现"
+            icon={require('./images/icon_find_nor.png')}
+            selected={this.state.selectedTab === DISCOVER_TAB}
+            onPress={()=>
+              this.setState({ selectedTab: DISCOVER_TAB})
+            }>
+            {this._renderContent(DISCOVER_TAB)}
+          </TabBarIOS.Item>
+          <TabBarIOS.Item
+            title = "设置"
+            icon={require('./images/icon_user_nor.png')}
+            selected={this.state.selectedTab === SETTING_TAB}
+            onPress={()=>
+              this.setState({ selectedTab: SETTING_TAB})
+            }>
+            {this._renderContent(SETTING_TAB)}
           </TabBarIOS.Item>
         </TabBarIOS>
 			</View>

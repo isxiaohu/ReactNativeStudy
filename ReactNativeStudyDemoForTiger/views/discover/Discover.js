@@ -1,10 +1,10 @@
 import React,{Component} from 'react';
 import { Navigator,View,StyleSheet,Text,Alert} from 'react-native';
 
-export default class Home extends Component{
+export default class Discover extends Component{
 	constructor(props){
 		super(props);
-		this.state = {text:"首页"}
+		this.state = {text:"发现"}
 	}
 
 	render(){

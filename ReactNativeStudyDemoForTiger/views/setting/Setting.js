@@ -1,17 +1,16 @@
 import React,{Component} from 'react';
 import { Navigator,View,StyleSheet,Text,Alert} from 'react-native';
 
-export default class Home extends Component{
+export default class Setting extends Component{
 	constructor(props){
 		super(props);
-		this.state = {text:"首页"}
+		this.state = {text:"设置"}
 	}
 
 	render(){
 		return (
 			<View style={styles.container}>
 				<Text>{this.state.text}</Text>
-
 			</View>
 		);
 	}
