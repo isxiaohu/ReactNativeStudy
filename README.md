@@ -14,3 +14,6 @@ npm install
 # Setting.js
 ![ReactNativeStudy](https://github.com/isxiaohu/ReactNativeStudy/blob/master/setting.png)
 
+# contact information
+Email：isxiaohu@163.com
+QQ：296330144
