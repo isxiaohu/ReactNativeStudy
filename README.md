@@ -1,8 +1,12 @@
 # ReactNativeStudy
 This is react-native study demo.support android/ios, cloding...
 
-# UI
+# Home.js
 ![ReactNativeStudy](https://github.com/isxiaohu/ReactNativeStudy/blob/master/home.png)
+
+# Discover.js
 ![ReactNativeStudy](https://github.com/isxiaohu/ReactNativeStudy/blob/master/discover.png)
-![ReactNativeStudy](https://github.com/isxiaohu/ReactNativeStudy/blob/master/seetting.png)
+
+# Setting.js
+![ReactNativeStudy](https://github.com/isxiaohu/ReactNativeStudy/blob/master/setting.png)
 
