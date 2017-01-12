@@ -8,6 +8,8 @@ cd ...ReactNativeStudy/ReactNativeStudyDemoForTiger
 
 npm install 
 
+My React Native version is 0.40
+
 # Home.js
 ![ReactNativeStudy](https://github.com/isxiaohu/ReactNativeStudy/blob/master/home.png)
 
@@ -18,5 +20,6 @@ npm install
 ![ReactNativeStudy](https://github.com/isxiaohu/ReactNativeStudy/blob/master/setting.png)
 
 # contact information
+
 Email：isxiaohu@163.com
 QQ：296330144
