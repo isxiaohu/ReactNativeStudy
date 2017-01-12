@@ -9,39 +9,40 @@ export default class Home extends Component{
 		super(props);
 		const ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
 		this.dataSource = [{
-					id: 0,
-					title: 'this is the first.',
+			id: 0,
+			name:'盖伦',
+			title: '德玛西亚学院最强学员',
 		}];
 		this.categorySource = [{
-			name:'分类1',
+			name:'早教',
 			url:'www.tiger.com',
 		},
 		{
-			name:'分类2',
+			name:'成教',
 			url:'www.tiger.com',
 		},
 		{
-			name:'分类3',
+			name:'艺术',
 			url:'www.tiger.com',
 		},
 		{
-			name:'分类4',
+			name:'证书',
 			url:'www.tiger.com',
 		},
 		{
-			name:'分类5',
+			name:'盖伦',
 			url:'www.tiger.com',
 		},
 		{
-			name:'分类6',
+			name:'菊花信',
 			url:'www.tiger.com',
 		},
 		{
-			name:'分类7',
+			name:'儿童劫',
 			url:'www.tiger.com',
 		},
 		{
-			name:'分类8',
+			name:'托儿索',
 			url:'www.tiger.com',
 		}];
 
@@ -55,7 +56,6 @@ export default class Home extends Component{
 	  this.renderRow = this.renderRow.bind(this);
     this.renderFooter = this.renderFooter.bind(this);
     this.loadMore = this.loadMore.bind(this);
-		this.renderPage = this.renderPage.bind(this);
 	}
 
 	onPullRelease(resolve) {
@@ -74,14 +74,6 @@ export default class Home extends Component{
 		  	{pullrelease ? <Text>请求中...</Text> : null}
 			</View>
 		);
-	}
-
-	renderPage(data, pageID) {
-    return (
-        <Image
-            source={data}
-            style={styles.page}/>
-    );
 	}
 
 	renderHeader(){
@@ -103,15 +95,19 @@ export default class Home extends Component{
 							<Text style = {styles.catrgoryName}>{rowData.name}</Text>
 						</View>}>
           </ListView>
-					<Text>猜你喜欢：</Text>
+					<Text style = {styles.sectionTitle}>猜你喜欢：</Text>
 				</View>
       );
   }
 
   renderRow(item, sectionID, rowID, highlightRow) {
     return (
-		    <View style={{height: 50, backgroundColor: '#fafafa', alignItems: 'center', justifyContent: 'center'}}>
-            <Text>{item.id}</Text>
+		    <View style={styles.listItem}>
+						<Image style = {styles.listItemIcon} source={require('../../images/gailun.jpeg')}/>
+						<View>
+							<Text style = {styles.listItemTitle}>{item.name}</Text>
+							<Text style = {{width:200}}>{item.title}</Text>
+						</View>
         </View>
     );
   }
@@ -121,7 +117,7 @@ export default class Home extends Component{
           return null;
       }
       return (
-          <View style={{height: 100}}>
+          <View style={{height: 50}}>
               <ActivityIndicator />
           </View>
       );
@@ -130,17 +126,20 @@ export default class Home extends Component{
   loadMore() {
 		this.dataSource.push({
 				 id: 0,
-				 title: 'begin to create data ...',
+				 name:'盖伦',
+				 title: '德玛西亚学院最强学员',
 		 });
 		 for(var i = 0; i < 5; i++) {
 				 this.dataSource.push({
-						 id: i + 1,
-						 title: 'this is ${i}',
+					 id: 0,
+					 name:'盖伦',
+					 title: '德玛西亚学院最强学员',
 				 })
 		 }
 		 this.dataSource.push({
-				 id: 6,
-				 title: 'finish create data ...',
+			 id: 0,
+			 name:'盖伦',
+			 title: '德玛西亚学院最强学员',
 		 });
 		 setTimeout(() => {
 				 this.setState({
@@ -231,4 +230,28 @@ const styles = StyleSheet.create({
         height: 130,
         resizeMode: 'stretch'
   },
+	sectionTitle:{
+		paddingTop:10,
+		paddingLeft:15,
+		width:width,
+		height:35,
+		backgroundColor:"#eeeeee"
+	},
+	listItem:{
+		alignItems: 'center',
+		flexDirection:'row',
+		borderRadius:5,
+	},
+	listItemIcon:{
+		width:50,
+		height:50,
+		marginTop:10,
+		marginLeft:20,
+		marginRight:5,
+		borderRadius:5,
+	},
+	listItemTitle:{
+		marginTop:8,
+		marginBottom:5
+	},
 });
