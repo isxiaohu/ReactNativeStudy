@@ -1,2 +1,3 @@
 # ReactNativeStudy
 This is react-native study demo.support android/ios, cloding...
+(http://i.imgur.com/i21YwnW.gif)
