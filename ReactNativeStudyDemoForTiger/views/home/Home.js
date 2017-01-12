@@ -44,6 +44,7 @@ export default class Home extends Component{
 			name:'分类8',
 			url:'www.tiger.com',
 		}];
+
 		this.state = {
 			text:"首页",
 			list: ds.cloneWithRows(this.dataSource),
@@ -54,6 +55,7 @@ export default class Home extends Component{
 	  this.renderRow = this.renderRow.bind(this);
     this.renderFooter = this.renderFooter.bind(this);
     this.loadMore = this.loadMore.bind(this);
+		this.renderPage = this.renderPage.bind(this);
 	}
 
 	onPullRelease(resolve) {
@@ -74,8 +76,24 @@ export default class Home extends Component{
 		);
 	}
 
+	renderPage(data, pageID) {
+    return (
+        <Image
+            source={data}
+            style={styles.page}/>
+    );
+	}
+
 	renderHeader(){
       return (
+				<View>
+					<View style = {styles.searchView}>
+						<Text style = {styles.searchCity}>上海</Text>
+						<View style = {styles.searchBar}>
+							<Image style = {styles.searchIcon} source = {require('../../images/search_button.png')}/>
+							<Text>搜索学校，课程，老师</Text>
+						</View>
+					</View>
           <ListView style={styles.categoryListView}
 					dataSource={this.state.category}
 					contentContainerStyle={styles.listContent}
@@ -85,6 +103,8 @@ export default class Home extends Component{
 							<Text style = {styles.catrgoryName}>{rowData.name}</Text>
 						</View>}>
           </ListView>
+					<Text>猜你喜欢：</Text>
+				</View>
       );
   }
 
@@ -154,6 +174,33 @@ const styles = StyleSheet.create({
     flexDirection: 'column',
     backgroundColor: '#ffffff',
   },
+	searchView:{
+		width:width,
+		height:44,
+		alignItems: 'center',
+    flexDirection:'row',
+		backgroundColor:'#dddddd',
+	},
+	searchCity:{
+		marginLeft:15,
+		marginRight:10,
+		fontSize:16,
+	},
+	searchBar:{
+		width:width - 70,
+		height:32,
+		borderRadius:6,
+    borderColor:"#000000",
+    borderWidth:1,
+		flexDirection:'row',
+		alignItems: 'center',
+	},
+	searchIcon:{
+		width:20,
+		height:20,
+		marginLeft:5,
+		marginRight:5,
+	},
 	categoryListView:{
 		width:width,
 		height:180,
@@ -179,4 +226,9 @@ const styles = StyleSheet.create({
 	catrgoryName:{
 		marginTop:10,
 	},
+	page:{
+        flex: 1,
+        height: 130,
+        resizeMode: 'stretch'
+  },
 });
