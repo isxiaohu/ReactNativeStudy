@@ -4,8 +4,6 @@
  * @flow
  */
 import React, { Component } from 'react';
-import ToastTigerAndroid from './NativeView/android/ToastTigerAndroid';
-import TigerCoustomView from './NativeView/android/TigerCustomView'
 import {
   AppRegistry,
   StyleSheet,
@@ -24,7 +22,7 @@ class ReactNativeStudyDemoForTiger extends Component {
       ToastTigerAndroid.show(x + ':' + y + ':' + width + ':' + height,ToastTigerAndroid.SHORT);
     });
   }
-  
+
   onClick(){
     ToastTigerAndroid.show('点你妹啊',ToastTigerAndroid.SHORT);
   }

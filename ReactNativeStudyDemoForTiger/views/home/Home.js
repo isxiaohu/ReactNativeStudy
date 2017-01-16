@@ -1,6 +1,7 @@
 import React,{Component} from 'react';
-import { Image,Navigator,View,StyleSheet,Text,Alert,Platform,ListView,ActivityIndicator,Dimensions} from 'react-native';
+import { Image,Navigator,View,StyleSheet,Text,TouchableHighlight,Platform,ListView,ActivityIndicator,Dimensions} from 'react-native';
 import {PullList} from 'react-native-pull';
+import CourseDetail from '../CourseDetail';
 var width = Dimensions.get('window').width; //full width
 var height = Dimensions.get('window').height; //full height
 
@@ -56,6 +57,7 @@ export default class Home extends Component{
 	  this.renderRow = this.renderRow.bind(this);
     this.renderFooter = this.renderFooter.bind(this);
     this.loadMore = this.loadMore.bind(this);
+		this.pressItem = this.pressItem.bind(this);
 	}
 
 	onPullRelease(resolve) {
@@ -74,6 +76,14 @@ export default class Home extends Component{
 		  	{pullrelease ? <Text>请求中...</Text> : null}
 			</View>
 		);
+	}
+
+	pressItem(rowId){
+		const { navigator } = this.props;
+		navigator.push({
+			name: 'CourseDetail',
+			component: CourseDetail,
+		});
 	}
 
 	renderHeader(){
@@ -102,13 +112,17 @@ export default class Home extends Component{
 
   renderRow(item, sectionID, rowID, highlightRow) {
     return (
-		    <View style={styles.listItem}>
-						<Image style = {styles.listItemIcon} source={require('../../images/gailun.jpeg')}/>
-						<View>
-							<Text style = {styles.listItemTitle}>{item.name}</Text>
-							<Text style = {{width:200}}>{item.title}</Text>
-						</View>
-        </View>
+					<TouchableHighlight onPress={()=>{
+							this.pressItem(rowID)
+					}}>
+				    <View style={styles.listItem}>
+								<Image style = {styles.listItemIcon} source={require('../../images/gailun.jpeg')}/>
+								<View>
+									<Text style = {styles.listItemTitle}>{item.name}</Text>
+									<Text style = {{width:200}}>{item.title}</Text>
+								</View>
+		        </View>
+					</TouchableHighlight>
     );
   }
 

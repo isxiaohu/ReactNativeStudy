@@ -13,6 +13,7 @@ import {
 import Home from './views/home/Home';
 import Discover from './views/discover/Discover';
 import Setting from './views/setting/Setting';
+import CourseDetail from './views/CourseDetail';
 
 const HOME_TAB = 'home_tab';
 const DISCOVER_TAB = 'discover-tab';
@@ -29,11 +30,11 @@ export default class MainPage extends Component {
   _renderContent(pageName: string, num?: number){
     var renderView;
     if(pageName == HOME_TAB){
-      renderView = <Home/>
+      renderView = <Home navigator={this.props.navigator}/>
     }else if(pageName == DISCOVER_TAB){
-      renderView = <Discover/>
+      renderView = <Discover navigator={this.props.navigator}/>
     }else if(pageName == SETTING_TAB){
-      renderView = <Setting/>
+      renderView = <Setting navigator={this.props.navigator}/>
     }
     return (
       <View style={styles.pageView}>
