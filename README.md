@@ -19,6 +19,9 @@ My React Native version is 0.40
 # Setting.js
 ![ReactNativeStudy](https://github.com/isxiaohu/ReactNativeStudy/blob/master/setting.png)
 
+# CourseDetail.js
+![ReactNativeStudy](https://github.com/isxiaohu/ReactNativeStudy/blob/master/courseDetail.png)
+
 # contact information
 
 Email：isxiaohu@163.com
